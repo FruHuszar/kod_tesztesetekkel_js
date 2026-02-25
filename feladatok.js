@@ -1,5 +1,17 @@
 export function egyedi_betuk(szoveg = "") {
   // ide kell írni a megoldást ciklussal és elágazással
- 
-  return [];
+
+  const lista = [];
+
+  for (let index = 0; index < szoveg.length; index++) {
+    let betu = szoveg[index];
+    betu = betu.toLowerCase();
+    if (/^[a-záéíóöőúüű]$/.test(betu) && !lista.includes(betu)) {
+      lista.push(betu);
+    }
+  }
+  lista.sort();
+
+  console.log(lista);
+  return lista;
 }
